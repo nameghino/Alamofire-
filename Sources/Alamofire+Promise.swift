@@ -88,7 +88,7 @@ extension Alamofire.DataRequest {
 }
 
 extension Alamofire.DownloadRequest {
-    public func response() -> Promise<DefaultDownloadResponse> {
+    public func response(_: PMKNamespacer) -> Promise<DefaultDownloadResponse> {
         return Promise(.pending) { seal in
             response(queue: nil) { response in
                 if let error = response.error {
